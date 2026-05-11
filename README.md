@@ -166,10 +166,14 @@ We evaluate NCO on two practical negative constraint tasks: profanity suppressio
 
 ### Profanity suppression
 
+![Profanity Suppression Experimental Result](./figures/profanity_experiments.png)
+
 For finite hard constraints, NCO is evaluated on **6 instruction-following models**: Llama 2 7B, Llama 3.1 8B, Qwen 2.5 7B, Falcon 7B, Falcon 3 7B, and Phi-4 14B. We test batched generation with batch sizes **1, 2, 4, 8, 16, 32, and 64**.
 Across these settings, NCO suppresses forbidden strings from a profanity lexicon and achieves zero constraint violations under the evaluated constraints. NCO preserves relative throughput close to the unconstrained base model across batch sizes, while rejection sampling and trie-based baselines show larger throughput degradation as batch size increases.
 
 ### PII suppression
+
+![PII Suppression Experimental Result](./figures/pii_experimetns.png)
 
 For regex constraints, NCO is evaluated on **3 Enron-trained language models**: GPT-J 6B, GPT-Neo 2.7B, and Pythia 6.9B. We test batch sizes **1, 2, 4, 8, and 16**.
 This setting is more challenging because the forbidden set is specified by regex patterns rather than finite strings, and matches may begin at arbitrary substring positions. NCO suppresses structured PII patterns such as email addresses, phone numbers, social security numbers, and credit card numbers using parallel DFA simulation. Across the evaluated settings, NCO achieves zero constraint violations and maintains stable throughput close to unconstrained decoding.
@@ -179,5 +183,7 @@ This setting is more challenging because the forbidden set is specified by regex
 In addition to throughput and violation rate, we evaluate generation quality using perplexity. The results show that perplexity remains at a similar level across NCO, the unconstrained base model, and the baselines. This suggests that exact negative constraint enforcement does not require a substantial degradation in language modeling behavior.
 
 ### Ablation findings
+
+![Ablation Experimental Result](./figures/ablation_study.png)
 
 The ablation results show that NCO's efficiency comes from complementary components. Aho-Corasick failure links reduce runtime overhead for finite hard constraints, BPE-aware precomputation reduces setup cost, suffix-state precomputation handles matches that begin inside a token, and GPU-based mask aggregation improves regex constraint enforcement.
