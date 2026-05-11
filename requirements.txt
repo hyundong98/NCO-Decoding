@@ -1,0 +1,10 @@
+accelerate==1.11.0
+bitsandbytes==0.48.0
+datasets==4.4.1
+interegular==0.3.3
+pip==25.2
+protobuf==6.33.2
+seaborn==0.13.2
+sentence-transformers==5.1.2
+sentencepiece==0.2.1
+tiktoken==0.12.0
