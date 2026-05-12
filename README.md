@@ -14,9 +14,9 @@
 
 ![Main Image](./figures/main.png)
 
-<!-- <div align="center">
-    <a href="https://arxiv.org/abs/xxxx.xxxxx"><b>Paper Link</b>📖</a>
-</div><br> -->
+<div align="center">
+    <a href="https://arxiv.org/abs/2605.10065"><b>Paper Link</b>📖</a>
+</div><br>
 
 ## 📝 TL; DR
 
