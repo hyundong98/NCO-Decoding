@@ -12,11 +12,11 @@
   </a>
 </p>
 
-![Main Image](./figures/main.png)
-
 <div align="center">
     <a href="https://arxiv.org/abs/2605.10065"><b>Paper Link</b>📖</a>
 </div><br>
+
+![Main Image](./figures/main.png)
 
 ## 📝 TL; DR
 
